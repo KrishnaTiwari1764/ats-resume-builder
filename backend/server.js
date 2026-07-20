@@ -22,7 +22,7 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json({ error: err.message || "Server error." });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`ATS Resume Builder API running on http://localhost:${PORT}`);
   if (!process.env.GEMINI_API_KEY) {
     console.warn(
